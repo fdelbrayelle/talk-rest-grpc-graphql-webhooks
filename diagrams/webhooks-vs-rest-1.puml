@@ -1,0 +1,14 @@
+@startuml
+"API Product" -> "Marketplace": GET /products
+"Marketplace" --> "API Product" : Pas de produit !
+
+...5 minutes plus tard......
+
+"API Product"  -> "Marketplace": GET /products
+"Marketplace" --> "API Product" : Pas de produit !
+
+...5 minutes plus tard......
+
+"API Product"  -[#0000FF]> "Marketplace": GET /products
+"Marketplace" -[#0000FF]-> "API Product" : { "id": 37, "name": "Vin de Touraine" }
+@enduml

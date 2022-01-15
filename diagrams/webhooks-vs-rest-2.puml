@@ -1,0 +1,16 @@
+@startuml
+participant APIProduct as "API Product" order 1
+actor Développeur as "Développeur" order 2
+participant Marketplace as "Marketplace" order 3
+actor Vendeur as "Vendeur tiers" order 4
+
+Développeur -> Marketplace: Inscription à événément "nouveau produit"\nEnvoyez les données sur /products svp
+Développeur <-- Marketplace: D'accord !
+
+...30 minutes plus tard......
+
+Vendeur -> Marketplace: Ajouter\nnouveau\nproduit
+
+APIProduct <[#0000FF]- Marketplace: POST /products { "id": 37, "name": "Vin de Touraine" }
+Marketplace <-[#0000FF]- APIProduct: OK merci !
+@enduml

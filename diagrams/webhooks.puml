@@ -1,0 +1,15 @@
+@startuml
+actor Développeur as Développeur
+participant Slack as "Application Slack"
+participant APIProduct as "API Product"
+
+Développeur -> Slack: Créer une application Slack
+Développeur -> Slack: Activer Incoming Webhooks
+Développeur -> Slack: Créer un Incoming Webhooks
+Slack --> Développeur: Envoyer une URL
+
+APIProduct -> APIProduct: Événément\nnouveau produit
+activate APIProduct
+APIProduct -> Slack: POST sur l'URL
+deactivate APIProduct
+@enduml
